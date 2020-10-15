@@ -8,11 +8,11 @@ use Illuminate\Support\Str;
 
 class MakeModelCommand extends GeneratorCommand
 {
-    protected $signature = 'make:model2 {name} {--t} {--m}';
+    protected $signature = 'make:model2 {name} {--t} {--m} {--mt}';
 
     protected $type = 'Model';
 
-    protected $description = '自动创建模型，模型对应Trait，模型表，--t表示创建trait，--m表示创建表';
+    protected $description = '自动创建模型，模型对应Trait，模型表，--t表示创建trait，--m表示创建表, --mt可以代替上述两个指令';
 
     public function getStub()
     {
@@ -23,10 +23,10 @@ class MakeModelCommand extends GeneratorCommand
     {
         $name = $this->argument('name');
         parent::handle();
-        if ($this->option('t')) {
+        if ($this->option('t') || $this->option('mt')) {
             Artisan::call("make:model-trait {$name}Trait");
         }
-        if ($this->option('m')) {
+        if ($this->option('m') || $this->option('mt')) {
             $tableName = Str::plural(Str::snake($name));
             Artisan::call("make:migration create_{$tableName}_table --create={$tableName}");
         }
