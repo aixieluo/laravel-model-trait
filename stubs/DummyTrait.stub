@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models\Traits;
+
+use App\Models\{{custom}};
+use Illuminate\Database\Eloquent\Builder;
+
+/**
+ * Trait {{class}}
+ *
+ * @mixin {{custom}}
+ * @mixin Builder
+ * @package App\Models\Traits
+ */
+trait {{class}}
+{
+}

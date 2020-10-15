@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Models;
+
+use App\Models\Traits\{{class}}Trait;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class {{class}} extends BaseModel
+{
+    use HasFactory;
+    use {{class}}Trait;
+}

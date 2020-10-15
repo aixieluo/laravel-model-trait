@@ -1,0 +1,30 @@
+{
+    "name": "xuxiaoyang/laravel-model-trait",
+    "description": "命令行生成模型trait",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "xuxiaoyang",
+            "email": "admin@aixieluo.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "illuminate/console": "^8.0",
+        "illuminate/filesystem": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aixieluo\\LaravelModelTrait\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aixieluo\\LaravelModelTrait\\ModelTraitServiceProvider"
+            ]
+        }
+    }
+}
